@@ -1,6 +1,6 @@
 {
   "name": "@honkjs/injector",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Thunk/Injector middleware for honk.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
