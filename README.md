@@ -1,11 +1,27 @@
-# honkjs/injector [![npm-img]][npm-link] [![dep-img]][dep-link] [![dev-img]][dev-link]
+<div>
+  <!-- npm -->
+  <a href="https://www.npmjs.com/package/@honkjs/injector">
+    <img src="https://img.shields.io/npm/v/@honkjs/injector.svg?style=flat-square" alt="npm version" />
+  </a>
+  <!--  dependencies -->
+  <a href="https://david-dm.org/honkjs/injector">
+    <img src="https://david-dm.org/honkjs/injector.svg?style=flat-square" alt="dependency status" />
+  </a>
+  <!-- dev dependencies  -->
+  <a href="https://david-dm.org/honkjs/injector&type=dev">
+    <img src="https://david-dm.org/honkjs/injector/dev-status.svg?style=flat-square" alt="dev dependency status" />
+  </a>
+  <!-- coverage -->
+  <a href="https://codecov.io/github/honkjs/injector">
+    <img src="https://img.shields.io/codecov/c/github/honkjs/injector/master.svg?style=flat-square" alt="test coverage" />
+  </a>
+  <!-- build -->
+  <a href="https://travis-ci.org/honkjs/injector">
+    <img src="https://img.shields.io/travis/honkjs/injector/master.svg?style=flat-square" alt="build status" />
+  </a>
+</div>
 
-[npm-img]: https://img.shields.io/npm/v/@honkjs/injector.svg?style=flat-square 'npm version'
-[npm-link]: https://www.npmjs.com/package/@honkjs/injector
-[dep-img]: https://david-dm.org/honkjs/injector.svg?style=flat-square 'dependency status'
-[dep-link]: https://david-dm.org/honkjs/injector
-[dev-img]: https://david-dm.org/honkjs/injector/dev-status.svg?style=flat-square 'dev dependency status'
-[dev-link]: https://david-dm.org/honkjs/injector?type=dev
+# honkjs/injector
 
 Injects services into functions passed to honk. Very similar functionality to [redux-thunk](https://github.com/reduxjs/redux-thunk).
 
