@@ -1,4 +1,11 @@
-# honkjs/injector
+# honkjs/injector [![npm-img]][npm-link] [![dep-img]][dep-link] [![dev-img]][dev-link]
+
+[npm-img]: https://img.shields.io/npm/v/@honkjs/injector.svg?style=flat-square 'npm version'
+[npm-link]: https://www.npmjs.com/package/@honkjs/injector
+[dep-img]: https://david-dm.org/honkjs/injector.svg?style=flat-square 'dependency status'
+[dep-link]: https://david-dm.org/honkjs/injector
+[dev-img]: https://david-dm.org/honkjs/injector/dev-status.svg?style=flat-square 'dev dependency status'
+[dev-link]: https://david-dm.org/honkjs/injector?type=dev
 
 Injects services into functions passed to honk. Very similar functionality to [redux-thunk](https://github.com/reduxjs/redux-thunk).
 
