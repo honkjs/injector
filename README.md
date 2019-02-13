@@ -23,6 +23,8 @@
 
 # honkjs/injector
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/honkjs/injector.svg)](https://greenkeeper.io/)
+
 Injects services into functions passed to honk. Very similar functionality to [redux-thunk](https://github.com/reduxjs/redux-thunk).
 
 ```js
