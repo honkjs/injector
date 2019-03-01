@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/honkjs/injector",
   "dependencies": {
-    "@honkjs/honk": "^1.0.5"
+    "@honkjs/honk": "^2.0.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.0",
