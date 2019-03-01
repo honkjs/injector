@@ -11,6 +11,10 @@
   <a href="https://david-dm.org/honkjs/injector&type=dev">
     <img src="https://david-dm.org/honkjs/injector/dev-status.svg?style=flat-square" alt="dev dependency status" />
   </a>
+  <!-- greenkeeper -->
+  <a href="https://greenkeeper.io/">
+    <img src="https://badges.greenkeeper.io/honkjs/injector.svg" alt="greenkeeper status" />
+  </a>
   <!-- coverage -->
   <a href="https://codecov.io/github/honkjs/injector">
     <img src="https://img.shields.io/codecov/c/github/honkjs/injector/master.svg?style=flat-square" alt="test coverage" />
@@ -23,8 +27,6 @@
 
 # honkjs/injector
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/honkjs/injector.svg)](https://greenkeeper.io/)
-
 Injects services into functions passed to honk. Very similar functionality to [redux-thunk](https://github.com/reduxjs/redux-thunk).
 
 ```js
@@ -33,13 +35,8 @@ import injector from '@honkjs/injector';
 import api from 'mycoolapi';
 
 const honk = new Honk()
-  // add the injector to the middleware pipeline
-  .use(injector())
-  // add a custom service
-  .use((app, next) => {
-    app.services.api = api;
-    return next;
-  }).honk;
+  // add injector to the middleware pipeline
+  .use(injector({ api })).honk;
 
 function getSomething(name) {
   return function({ api }) {
@@ -53,7 +50,7 @@ honk(getSomething('bob')).then((results) => console.log(results));
 
 Injector always returns the results of the function passed in.
 
-Dependency injection is handled using js object deconstruction.
+"Dependency injection" is handled using js object deconstruction.
 
 ```js
 // no deconstruction
@@ -102,7 +99,7 @@ function coolThunk(name) {
 Similar to how IHonk can be overloaded, you can use declaration merging.
 
 ```ts
-declare module '@honkjs/honk' {
+declare module '@honkjs/injector' {
   interface IHonkServices {
     api: MyApi;
   }
@@ -113,6 +110,21 @@ declare module '@honkjs/honk' {
 
 function coolThunk(name) {
   return function({ api }: IHonkServices) {
+    return api.getSomething(name);
+  };
+}
+```
+
+## Manually
+
+```ts
+type MyHonkAppServices = {
+  honk: IHonk;
+  api: MyApi;
+}
+
+function coolThunk(name) {
+  return function({ api }: MyHonkAppServices) {
     return api.getSomething(name);
   };
 }
