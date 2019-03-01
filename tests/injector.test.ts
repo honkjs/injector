@@ -80,7 +80,7 @@ test('keeps existing services', () => {
 
   const honk = new Honk()
     .use((app, next) => {
-      app.services.existing = 'data2';
+      app.services = { existing: 'data2' };
       return next;
     })
     .use(injector({ test: 'data' })).honk;
@@ -90,7 +90,6 @@ test('keeps existing services', () => {
 });
 
 test('checks existing services', () => {
-
   const honk = new Honk().use((app, next) => {
     const garbage: any = 'ahoy';
     // intentionally break services
@@ -102,7 +101,6 @@ test('checks existing services', () => {
   expect(() => honk.use(injector({ test: 'data' }))).toThrow();
 });
 
-
 test('works with no previous services', () => {
   console.log = jest.fn();
 
@@ -112,12 +110,14 @@ test('works with no previous services', () => {
     return 'test';
   }
 
-  const honk = new Honk().use((app, next) => {
-    const garbage: any = undefined;
-    // this would be the default in honk 2.0
-    app.services = garbage;
-    return next;
-  }).use(injector({test: 'data'})).honk;
+  const honk = new Honk()
+    .use((app, next) => {
+      const garbage: any = undefined;
+      // this would be the default in honk 2.0
+      app.services = garbage;
+      return next;
+    })
+    .use(injector({ test: 'data' })).honk;
 
   expect(honk(test)).toBe('test');
   expect(console.log).not.toBeCalled();
