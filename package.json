@@ -27,14 +27,14 @@
   },
   "homepage": "https://github.com/honkjs/injector",
   "dependencies": {
-    "@honkjs/honk": "^2.0.0"
+    "@honkjs/honk": "^3.0.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.15",
     "jest": "^24.8.0",
     "np": "^4.0.2",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.5.2"
+    "typescript": "^3.5.3"
   },
   "publishConfig": {
     "access": "public",

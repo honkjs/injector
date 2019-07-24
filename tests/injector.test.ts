@@ -8,7 +8,7 @@ test('still honks', () => {
   const honk = new Honk().use(injector()).honk;
 
   expect(honk()).toBeUndefined();
-  expect(console.log).toBeCalledWith('HONK 🚚 HONK');
+  expect(console.log).toBeCalledWith('🚚 HONK!');
 });
 
 test('calls function', () => {
